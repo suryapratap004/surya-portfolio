@@ -1,0 +1,279 @@
+---
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Surya Pratap Singh Chauhan | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+    <style>
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: #333;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      header {
+        background: #5a3fbb;
+        color: #fff;
+        padding: 80px 20px 60px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(90, 63, 187, 0.6);
+        border-bottom-left-radius: 80px;
+        border-bottom-right-radius: 80px;
+        position: relative;
+      }
+      header::after {
+        content: "";
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(circle at center, #8b70e9 40%, transparent 80%);
+        border-radius: 50%;
+        opacity: 0.15;
+        filter: blur(45px);
+        z-index: 0;
+      }
+      .profile-pic {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid #8b70e9;
+        box-shadow: 0 4px 15px rgba(139, 112, 233, 0.7);
+        margin: 0 auto 25px;
+        display: block;
+      }
+      header h1 {
+        font-weight: 700;
+        font-size: 3.2rem;
+        margin-bottom: 0.2em;
+        letter-spacing: 2px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        z-index: 1;
+      }
+      header p {
+        font-weight: 300;
+        font-size: 1.25rem;
+        font-style: italic;
+        letter-spacing: 1.2px;
+        margin-top: 0;
+        margin-bottom: 1em;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        position: relative;
+        z-index: 1;
+      }
+      nav a {
+        margin: 0 20px;
+        color: #f0eafc;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.15rem;
+        padding: 10px 20px;
+        border-radius: 50px;
+        transition: background 0.4s, color 0.4s, box-shadow 0.4s;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 0 5px transparent;
+      }
+      nav a:hover {
+        background: #8b70e9;
+        color: white;
+        box-shadow: 0 4px 16px rgba(139, 112, 233, 0.7);
+      }
+      section {
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 40px 30px;
+        background: rgba(255, 255, 255, 0.97);
+        border-radius: 25px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards;
+      }
+      section:nth-of-type(odd) { animation-delay: 0.2s; }
+      section:nth-of-type(even) { animation-delay: 0.4s; }
+      section:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 16px 40px rgba(90, 63, 187, 0.25);
+      }
+      @keyframes fadeInUp {
+        to { opacity: 1; transform: translateY(0);}
+      }
+      h2 {
+        color: #5a3fbb;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        letter-spacing: 1.5px;
+        border-bottom: 4px solid #8b70e9;
+        padding-bottom: 12px;
+      }
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+      .project {
+        background: #f8faff;
+        padding: 25px 30px;
+        border-radius: 25px;
+        box-shadow: 0 6px 20px rgba(90, 63, 187, 0.2);
+        transition: box-shadow 0.4s ease;
+      }
+      .project:hover {
+        box-shadow: 0 15px 40px rgba(90, 63, 187, 0.45);
+      }
+      .skills, .education, .hobbies, .strengths {
+        margin-bottom: 40px;
+      }
+      .label {
+        font-weight: 700;
+        color: #6b4ceb;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+      .skills ul, .strengths ul, .hobbies ul {
+        list-style-type: circle;
+        padding-left: 24px;
+        color: #4a4a4a;
+        font-size: 1.1rem;
+      }
+      ul li { margin-bottom: 10px; }
+      footer {
+        text-align: center;
+        padding: 25px;
+        color: #e1e1e8;
+        font-style: italic;
+        font-weight: 500;
+        background: #4a3fba;
+        box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.15);
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        margin-top: 70px;
+        font-size: 1rem;
+      }
+      #contact a {
+        color: #5a3fbb;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s, text-shadow 0.3s;
+      }
+      #contact a:hover {
+        color: #8b70e9;
+        text-shadow: 0 0 8px #8b70e9;
+      }
+      @media (max-width: 600px) {
+        header h1 { font-size: 2.5rem; }
+        header p { font-size: 1.1rem; }
+        nav a { margin: 8px 12px; font-size: 1rem; padding: 8px 15px; }
+        section { margin: 40px 15px; padding: 30px 25px; }
+        h2 { font-size: 2rem; margin-bottom: 20px;}
+        .projects { grid-template-columns: 1fr;}
+        .profile-pic { width: 130px; height: 130px; margin-bottom: 20px;}
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="/profile.jpg" alt="Surya Pratap Singh Chauhan" class="profile-pic" />
+      <h1>Surya Pratap Singh Chauhan</h1>
+      <p>Portfolio | Computer Science & Engineering Student</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I'm a Computer Science & Engineering undergraduate at VIT University, Vellore (2021-2025), passionate about problem-solving, continuous learning, and building impactful technology solutions. I’m certified in AWS, experienced in Python-based development, and love challenges that stretch my logic and creativity.</p>
+    </section>
+    <section id="education">
+      <h2>Education</h2>
+      <div class="education">
+        <p><span class="label">B.Tech (CSE):</span> VIT University, Vellore (2021-2025), 7.10 CGPA</p>
+        <p><span class="label">Certification:</span> AWS Solutions Architect Associate, AWS Cloud Practitioner (2025)</p>
+        <p><span class="label">Class 12 (CBSE):</span> Bluebells Public School, Gurgaon, 81% (2021)</p>
+        <p><span class="label">Class 10 (CBSE):</span> Our Lady Fatima Convent School, Gurgaon, 83% (2019)</p>
+      </div>
+    </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project">
+          <h3>Emotion-Based Music Recommendation</h3>
+          <p>Developed a real-time system using Python, OpenCV, MediaPipe, TensorFlow, and Spotify/YouTube APIs to detect user emotions and recommend music. Reached ~90% accuracy with CNN-based facial emotion recognition and integrated playback APIs for personalized experiences.</p>
+        </div>
+        <div class="project">
+          <h3>INTEGRISCAN – File Integrity Web App</h3>
+          <p>Built a web application for real-time file integrity monitoring using Python, Tkinter, SHA-512, SQLite, and AES-256 encryption. Features included recursive scanning, periodic checks, GUI auto-lock, and secure data storage.</p>
+        </div>
+      </div>
+    </section>
+    <section id="skills">
+      <h2>Skills & Tools</h2>
+      <ul class="skills">
+        <li><span class="label">Languages:</span> Python, C/C++, SQL</li>
+        <li><span class="label">Developer Tools:</span> VS Code, Amazon AWS</li>
+        <li><span class="label">Databases:</span> MySQL</li>
+        <li><span class="label">Core Concepts:</span> Data Structures & Algorithms, OOP, OS, Computer Networks, Database Systems</li>
+        <li><span class="label">Soft Skills:</span> Attention to detail, critical thinking, teamwork</li>
+      </ul>
+      <h3>Strengths</h3>
+      <ul class="strengths">
+        <li>Confident and hardworking under deadlines</li>
+        <li>Consistent and goal-oriented</li>
+        <li>Effective both independently and in groups</li>
+        <li>Adaptable to dynamic environments</li>
+      </ul>
+      <h3>Hobbies & Interests</h3>
+      <ul class="hobbies">
+        <li>Solving reasoning/logical puzzles</li>
+        <li>Travelling, exploring cultures</li>
+        <li>Regular basketball player—district level runner-up</li>
+        <li>Driving</li>
+      </ul>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        <span class="label">Email:</span>
+        <a href="mailto:suryaprataprajput04@gmail.com">suryaprataprajput04@gmail.com</a> |
+        <a href="mailto:suryapratap.7617@gmail.com">suryapratap.7617@gmail.com</a>
+      </p>
+      <p>
+        <span class="label">Mobile/WhatsApp:</span>
+        <a href="tel:+918076665155">+91-8076665155</a>,
+        <a href="tel:+918750007617">+91-8750007617</a>
+      </p>
+      <p>
+        <span class="label">LinkedIn:</span>
+        <a href="https://www.linkedin.com/in/surya-pratap-40884821b" target="_blank" rel="noopener">surya-pratap-40884821b</a><br>
+        <span class="label">GitHub:</span>
+        <a href="https://github.com/your-github-username" target="_blank" rel="noopener">your-github-username</a>
+      </p>
+      <p>
+        <span class="label">Location:</span>
+        Gurgaon, Haryana, India
+      </p>
+    </section>
+    <footer>
+      &copy; 2025 Surya Pratap Singh Chauhan. All rights reserved.
+    </footer>
+  </body>
+</html>
